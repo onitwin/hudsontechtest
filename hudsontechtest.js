@@ -9,9 +9,16 @@ async function obtainData(url){
     const data=[];
 
     const list =document.querySelectorAll(".product-tile")
-    for (const item of list){
-      data.push({"product":item.querySelector(".product-name").innerHTML})
-    }
-    return data;
-  })
+
+      for (const item of list){
+        data.push({"product":item.querySelector(".product-name").innerHTML,"metadata":{"image_url":item.querySelector("img").src}})
+      }
+      return data;
+    })
+
   console.log(list);
+
+  browser.close()
+}
+
+obtainData('https://dev-test.hudsonstaging.co.uk/')
