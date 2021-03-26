@@ -13,7 +13,7 @@ async function obtainData(url){
 
       for (const item of list){
         data.push({"product":item.querySelector(".product-name").innerHTML,"metadata":{"image_url":item.querySelector("img").src,
-      "quantity":parseInt(item.querySelector(".details p").innerHTML.slice(10)),"price":parseInt(item.querySelector('p:nth-child(2)').innerHTML.slice(8))}})
+      "quantity":parseInt(item.querySelector(".details p").innerHTML.slice(10)),"price":parseFloat(item.querySelector('p:nth-child(2)').innerHTML.slice(8))}})
       }
       return data;
     })
